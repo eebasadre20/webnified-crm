@@ -1,0 +1,48 @@
+<div>
+	<h2>Edit Project</h2>
+
+	<%= form_for(:project, :html => {:class => "form-horizontal project"},:url => {:action => 'update', :id => @project.id}) do |f| %>
+	
+		 <div class="control-group">
+    		<%= f.label :project_name, :class => 'control-label' %>
+    		<div class="controls">
+      		<%= f.text_field :project_name, :class => 'form-control' %>
+    		</div>
+  		</div>
+
+
+		 <div class="control-group">
+    		<%= f.label :project_started, :class => 'control-label' %>
+    		<div class="controls">
+      		<%= f.datetime_select :project_started, :class => 'form-control' %>
+    		</div>
+  		</div>
+
+  		<div class="control-group">
+    		<%= f.label :project_estimated_to_end, :class => 'control-label' %>
+    		<div class="controls">
+      		<%= f.datetime_select :project_estimated_to_end, :class => 'form-control' %>
+    		</div>
+  		</div>
+
+  		<div class="control-group">
+    		<%= f.label :project_status, :class => 'control-label' %>
+    		<div class="controls">
+      		<%= f.select :project_status, :class => 'form-control' %>
+    		</div>
+  		</div>
+
+  		<div class="control-group">
+    		<%= f.label :project_description, :class => 'control-label' %>
+    		<div class="controls">
+      		<%= f.text_area :project_description, :class => 'form-control' %>
+    		</div>
+  		</div>
+
+  	<div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	      <%= submit_tag("Update Submit", :class => 'btn btn-primary') %>
+	    </div>
+  	</div>
+	<% end %>
+</div>
