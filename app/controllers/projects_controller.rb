@@ -26,15 +26,15 @@ class ProjectsController < ApplicationController
 
 	def edit
 		@project = Project.find(params[:id])
+		@customer_id = params[:customer_id]
 	end
 
 	def update
 		@project = Project.find(params[:id])
-		@project.update_attributes(project_params)
 
-		if @project.save
+		if @project.update_attributes(project_params)
 			flash[:notice] = "Project successfully updated!"
-			redirect_to(:action => 'show', :id => @project.id)
+			redirect_to(:controller => 'projects', :action => 'show', :id => @project.id)
 		else
 			render('edit')
 		end

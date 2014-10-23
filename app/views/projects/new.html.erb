@@ -7,7 +7,7 @@
   	<div class="form-group">
 	    <label for="inputEmail3" class="col-sm-2 control-label">Project Name</label>
 	    <div class="col-sm-7">
-	      <%= f.text_field(:project_name_search, data: {autocomplete_source: Customer.order(:name).map(&:name)}, :class => 'form-control') %>
+	      <%= f.text_field(:project_name, :class => 'form-control') %>
 	    </div>
   	</div>
 
@@ -41,7 +41,7 @@
   	<div class="form-group">
 	    <div class="col-sm-offset-2 col-sm-10">
 	      <%= submit_tag("Create Submit", :class => 'btn btn-primary') %>
-	      <%= link_to('Cancel',{:action => 'show'}, :class => 'btn btn-danger') %>
+	      <%= link_to('Cancel',{:controller => 'customers',:action => 'show'}, :class => 'btn btn-danger') %>
 	    </div>
   	</div>
 
